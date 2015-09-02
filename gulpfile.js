@@ -1,26 +1,26 @@
 var gulp = require('gulp');
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
-var less = require('gulp-less');
-var path = require('path');
+var browserSync = require('browser-sync').create();
+var sass = require('gulp-sass');
 
-// watch files for changes and reload
 gulp.task('serve', function() {
-    browserSync({
+    browserSync.init({
         server: {
-            baseDir: './'
+            baseDir: "./"
         },
-        port: 8888,
-        browser: []
+        open: false,
+        xip: true
     });
 
-    gulp.watch(['*.html', 'less/*.less', 'js/*.js'], {cwd: './'}, reload);
+    gulp.watch('*.html').on('change', browserSync.reload);
+    gulp.watch("scss/*.scss", ['sass']);
+    gulp.watch('js/*.js').on('change', browserSync.reload);
 });
 
-gulp.task('less', function () {
-    return gulp.src('./less/creative.less')
-        .pipe(less({
-            paths: [ path.join(__dirname, 'less', 'includes') ]
-        }))
-        .pipe(gulp.dest('./css'));
+gulp.task('sass', function() {
+    return gulp.src("scss/*.scss")
+        .pipe(sass())
+        .pipe(gulp.dest("css"))
+        .pipe(browserSync.stream());
 });
+
+gulp.task('default', ['serve']);

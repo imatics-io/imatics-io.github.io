@@ -9,14 +9,11 @@
     "url": "https://github.com/imatics-io/imatics-io.github.io.git"
   },
   "author": "imatics inc",
-  "bugs": {
-    "url": "https://github.com/imatics-io/imatics-io.github.io/issues"
-  },
   "private": true,
   "homepage": "https://github.com/imatics-io/imatics-io.github.io",
   "devDependencies": {
     "browser-sync": "^2.7.1",
     "gulp": "^3.8.11",
-    "gulp-less": "^3.0.3"
+    "gulp-sass": "^2.0.4"
   }
 }
