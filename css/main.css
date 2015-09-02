@@ -10,9 +10,9 @@ body {
   margin: 0;
   border-radius: 0; }
   .intro-container .row {
-    height: 80vh;
-    display: table-cell;
-    vertical-align: middle; }
+    height: 60vw;
+    display: flex;
+    align-items: center; }
   .intro-container .company-name {
     font-weight: 200;
     font-size: 3rem;
@@ -29,12 +29,16 @@ body {
   .content-container > .row h3 {
     margin-bottom: 2.5rem; }
 
+.pitch .container {
+  display: flex;
+  align-items: center; }
+
 #numbers {
   color: #2B2B2B;
   text-align: center; }
   #numbers h4 {
     font-size: 3rem;
-    font-weight: 300; }
+    font-weight: 200; }
   #numbers p {
     font-size: 0.8rem; }
 
@@ -44,11 +48,6 @@ body {
   padding-bottom: 1rem;
   font-weight: normal;
   color: #EFEFEF; }
-
-#proble-image {
-  width: 100%;
-  height: 100%;
-  background: white; }
 
 #the-problem {
   padding: 8rem 0;
@@ -79,3 +78,27 @@ body {
   #features .feature p {
     font-size: 0.9rem;
     color: #898989; }
+
+@media (max-width: 61.9em) {
+  .intro-container {
+    background-position: top center;
+    background-size: 200%; }
+    .intro-container .row {
+      height: 100vw;
+      align-items: flex-start;
+      padding-top: 3vh; }
+  #the-problem, #the-solution {
+    padding: 5rem 0; }
+  .pitch .container {
+    display: inherit; }
+  .pitch img {
+    margin: 3rem 0; } }
+
+@media (max-width: 33.9em) {
+  .intro-container {
+    background-position: top center;
+    background-size: 500%; }
+    .intro-container .row {
+      height: 250vw;
+      align-items: flex-start;
+      padding-top: 10vw; } }
