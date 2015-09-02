@@ -11,8 +11,8 @@ body {
   border-radius: 0; }
   .intro-container .row {
     height: 60vw;
-    display: flex;
-    align-items: center; }
+    display: table-cell;
+    vertical-align: middle; }
   .intro-container .company-name {
     font-weight: 200;
     font-size: 3rem;
@@ -85,7 +85,7 @@ body {
     background-size: 200%; }
     .intro-container .row {
       height: 100vw;
-      align-items: flex-start;
+      vertical-align: top;
       padding-top: 3vh; }
   #the-problem, #the-solution {
     padding: 5rem 0; }
